@@ -1,0 +1,247 @@
+﻿@model IEnumerable<SinavOlusturma.Data.ModelView.Titles> 
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card card-body mb-3">
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="md-form">
+                <select class="mdb-select">
+                    <option value="" disabled selected>Choose your subject</option>
+                        
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.Link">@item.Title</option>
+                        }
+                </select>
+                <label>Select Subject</label>
+            </div>
+        </div>
+        <div class="col-md-12 mt-3">
+            <div class="md-form">
+                <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
+                <label for="form8">Content</label>
+            </div>
+        </div>
+        <div class="col-md-12 mt-3" id="soru">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <input type="text" id="soru1" class="form-control">
+                            <label for="soru1" class="">Question 1</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option1" class="form-control">
+                                    <label for="Option1" class="">A</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option2" class="form-control">
+                                    <label for="Option2" class="">B</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option3" class="form-control">
+                                    <label for="Option3" class="">C</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option4" class="form-control">
+                                    <label for="Option4" class="">D</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <select class="mdb-select">
+                            <option value="" disabled selected>Choose Answer</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                        <label>Choose Answer</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 mt-3" id="soru">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <input type="text" id="soru1" class="form-control">
+                            <label for="soru1" class="">Question 1</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option1" class="form-control">
+                                    <label for="Option1" class="">A</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option2" class="form-control">
+                                    <label for="Option2" class="">B</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option3" class="form-control">
+                                    <label for="Option3" class="">C</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option4" class="form-control">
+                                    <label for="Option4" class="">D</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <select class="mdb-select">
+                            <option value="" disabled selected>Choose Answer</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                        <label>Choose Answer</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 mt-3" id="soru">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <input type="text" id="soru1" class="form-control">
+                            <label for="soru1" class="">Question 1</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option1" class="form-control">
+                                    <label for="Option1" class="">A</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option2" class="form-control">
+                                    <label for="Option2" class="">B</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option3" class="form-control">
+                                    <label for="Option3" class="">C</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option4" class="form-control">
+                                    <label for="Option4" class="">D</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <select class="mdb-select">
+                            <option value="" disabled selected>Choose Answer</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                        <label>Choose Answer</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 mt-3" id="soru">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <input type="text" id="soru1" class="form-control">
+                            <label for="soru1" class="">Question 1</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option1" class="form-control">
+                                    <label for="Option1" class="">A</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option2" class="form-control">
+                                    <label for="Option2" class="">B</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option3" class="form-control">
+                                    <label for="Option3" class="">C</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form">
+                                    <input type="text" id="Option4" class="form-control">
+                                    <label for="Option4" class="">D</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <select class="mdb-select">
+                            <option value="" disabled selected>Choose Answer</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                        <label>Choose Answer</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary float-right saveAboutMe" style="width: 10rem">Save</button>
+            <button type="button" class="btn btn-danger float-right saveAboutMe">Cancel</button>
+        </div>
+    </div>
+</div>

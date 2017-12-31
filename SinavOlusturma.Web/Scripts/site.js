@@ -10,4 +10,10 @@
             console.log(result);
         });
     });
+
+
+
+    
+    $('.mdb-select').material_select();
+    
 });
