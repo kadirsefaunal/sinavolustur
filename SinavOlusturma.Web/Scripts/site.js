@@ -10,10 +10,17 @@
             console.log(result);
         });
     });
-
-
-
     
     $('.mdb-select').material_select();
+
+    $("#subject").change(function () {
+        var subject = $("#subject option:selected").val();
+
+        $.post("Exam/GetContent", { subject: subject }, function (result) {
+            console.log(result);
+            $("#content").val("");
+            $("#content").val(result);
+        });
+    });
     
 });

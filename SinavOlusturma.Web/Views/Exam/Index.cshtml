@@ -9,21 +9,20 @@
     <div class="row mt-3">
         <div class="col-md-12">
             <div class="md-form">
-                <select class="mdb-select">
+                <select class="mdb-select" id="subject">
                     <option value="" disabled selected>Choose your subject</option>
-                        
-                        @foreach (var item in Model)
-                        {
-                            <option value="@item.Link">@item.Title</option>
-                        }
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.Link">@item.Title</option>
+                    }
                 </select>
                 <label>Select Subject</label>
             </div>
         </div>
         <div class="col-md-12 mt-3">
             <div class="md-form">
-                <textarea type="text" id="form8" class="md-textarea" style="height: 100px"></textarea>
-                <label for="form8">Content</label>
+                <textarea type="text" id="content" class="md-textarea" style="height: 200px"></textarea>
+                <label for="content">Content</label>
             </div>
         </div>
         <div class="col-md-12 mt-3" id="soru">

@@ -31,12 +31,12 @@ namespace SinavOlusturma.Web.Controllers
             List<Titles> titleList = new List<Titles>();
             Titles newTitle;
 
-            var links = doc.DocumentNode.Descendants("a").ToList();
+            var links = doc.DocumentNode.Descendants("a").ToList(); // Get Links
             List<string> linkList = new List<string>();
 
             string prev = "";
 
-            foreach (var item in links)
+            foreach (var item in links)                             // Create link list
             {
                 if (item.Attributes["href"].Value.Contains("story"))
                 {
@@ -60,5 +60,26 @@ namespace SinavOlusturma.Web.Controllers
 
             return View(titleList);
         }
+
+        [HttpPost]
+        public JsonResult GetContent(string subject)
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            string site = subject;
+
+            Uri url = new Uri(site);
+            WebClient client = new WebClient();
+            client.Encoding = Encoding.UTF8;
+            string html = client.DownloadString(url);
+
+            HtmlDocument dokuman = new HtmlDocument();
+            dokuman.LoadHtml(html);
+
+            var p = dokuman.DocumentNode.Descendants("article").Where(x => x.Attributes["class"].Value.Contains("article-body-component")).First();
+            return Json(p.InnerText);
+        }
+
+
     }
 }
