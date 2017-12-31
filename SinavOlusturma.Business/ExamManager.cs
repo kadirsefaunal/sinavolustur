@@ -34,5 +34,10 @@ namespace SinavOlusturma.Business
                 return false;
             }
         }
+
+        public List<Exam> GetAllExam()
+        {
+            return _ExamRepo.GetAll().OrderByDescending(x => x.Date).ToList();
+        }
     }
 }
