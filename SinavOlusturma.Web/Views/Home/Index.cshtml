@@ -23,12 +23,14 @@
                 @{ int i = 1; }
                 @foreach (var exam in Model)
                 {
-                    <tr>
-                        <th scope="row">@i</th>
-                        <td>@exam.Title</td>
-                        <td>@exam.Date.Value.ToShortDateString()</td>
-                        <td><a href="@Url.Action("DeleteExam", "Home", new { examID = exam.Id})" class="btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                    </tr>
+                    
+                        <tr>
+                            <th scope="row">@i</th>
+                            <td><a href="@Url.Action("Exam", "Exam", new { examID = exam.Id})" class="btn-sm">@exam.Title</a></td>
+                            <td><a href="@Url.Action("Exam", "Exam", new { examID = exam.Id})" class="btn-sm">@exam.Date.Value.ToShortDateString()</a></td>
+                            <td><a href="@Url.Action("DeleteExam", "Home", new { examID = exam.Id})" class="btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        </tr>
+                    
                     i++;
                 }
             </tbody>

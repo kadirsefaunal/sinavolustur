@@ -104,5 +104,14 @@ namespace SinavOlusturma.Web.Controllers
                 return Json("False");
             }
         }
+
+        public ActionResult Exam(Guid examID)
+        {
+            ExamQuestionView eqv = new ExamQuestionView();
+            eqv.Exam = examManager.GetExam(examID);
+            eqv.Questions = eqv.Exam.Questions.ToList();
+
+            return View(eqv);
+        }
     }
 }

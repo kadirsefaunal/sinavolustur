@@ -46,5 +46,10 @@ namespace SinavOlusturma.Business
             _ExamRepo.Delete(exam);
             _uow.SaveChanges();
         }
+
+        public Exam GetExam(Guid examID)
+        {
+            return _ExamRepo.Get(x => x.Id == examID);
+        }
     }
 }

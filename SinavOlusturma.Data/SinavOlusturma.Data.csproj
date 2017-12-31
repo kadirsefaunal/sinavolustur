@@ -52,6 +52,7 @@
     <Compile Include="Exam.cs">
       <DependentUpon>SinavDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelView\ExamQuestionView.cs" />
     <Compile Include="ModelView\Titles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs">
