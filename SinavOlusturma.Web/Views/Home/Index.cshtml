@@ -20,14 +20,16 @@
                 </tr>
             </thead>
             <tbody>
+                @{ int i = 1; }
                 @foreach (var exam in Model)
                 {
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">@i</th>
                         <td>@exam.Title</td>
                         <td>@exam.Date.Value.ToShortDateString()</td>
-                        <td><a class="btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td><a href="@Url.Action("DeleteExam", "Home", new { examID = exam.Id})" class="btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                     </tr>
+                    i++;
                 }
             </tbody>
         </table>

@@ -15,5 +15,11 @@ namespace SinavOlusturma.Web.Controllers
         {
             return View(examManager.GetAllExam());
         }
+
+        public ActionResult DeleteExam(Guid examID)
+        {
+            examManager.DeleteExamByID(examID);
+            return RedirectToAction("Index");
+        }
     }
 }
