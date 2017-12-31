@@ -17,10 +17,56 @@
         var subject = $("#subject option:selected").val();
 
         $.post("Exam/GetContent", { subject: subject }, function (result) {
-            console.log(result);
             $("#content").val("");
             $("#content").val(result);
         });
     });
-    
+
+    $("#save").click(function () {
+        var exam = {
+            Title: $("#subject option:selected").text(),
+            Text: $("#content").val()
+        };
+
+        var questions = [];
+        questions.push({
+            QuestionContent: $("#soru1").val(),
+            OptionA: $("#s1Option1").val(),
+            OptionB: $("#s1Option2").val(),
+            OptionC: $("#s1Option3").val(),
+            OptionD: $("#s1Option4").val(),
+            Answer: $("#answer1 option:selected").val()
+        });
+
+        questions.push({
+            QuestionContent: $("#soru2").val(),
+            OptionA: $("#s2Option1").val(),
+            OptionB: $("#s2Option2").val(),
+            OptionC: $("#s2Option3").val(),
+            OptionD: $("#s2Option4").val(),
+            Answer: $("#answer2 option:selected").val()
+        });
+
+        questions.push({
+            QuestionContent: $("#soru3").val(),
+            OptionA: $("#s3Option1").val(),
+            OptionB: $("#s3Option2").val(),
+            OptionC: $("#s3Option3").val(),
+            OptionD: $("#s3Option4").val(),
+            Answer: $("#answer3 option:selected").val()
+        });
+
+        questions.push({
+            QuestionContent: $("#soru4").val(),
+            OptionA: $("#s4Option1").val(),
+            OptionB: $("#s4Option2").val(),
+            OptionC: $("#s4Option3").val(),
+            OptionD: $("#s4Option4").val(),
+            Answer: $("#answer4 option:selected").val()
+        });
+
+        $.post("Exam/SaveQuestions", { exam: exam, questions: questions }, function (result) {
+
+        });
+    });
 });

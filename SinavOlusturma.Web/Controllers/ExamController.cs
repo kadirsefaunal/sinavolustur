@@ -1,4 +1,6 @@
 ﻿using HtmlAgilityPack;
+using SinavOlusturma.Business;
+using SinavOlusturma.Data;
 using SinavOlusturma.Data.ModelView;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,9 @@ namespace SinavOlusturma.Web.Controllers
 {
     public class ExamController : Controller
     {
+        ExamManager examManager = new ExamManager();
+        QuestionManager questionManager = new QuestionManager();
+
         public ActionResult Index()
         {
             ServicePointManager.Expect100Continue = true;
@@ -77,9 +82,27 @@ namespace SinavOlusturma.Web.Controllers
             dokuman.LoadHtml(html);
 
             var p = dokuman.DocumentNode.Descendants("article").Where(x => x.Attributes["class"].Value.Contains("article-body-component")).First();
-            return Json(p.InnerText);
+            return Json(HttpUtility.HtmlDecode(p.InnerText));
         }
 
-
+        [HttpPost]
+        public JsonResult SaveQuestions(Exam exam, List<Question> questions)
+        {
+            exam.Date = DateTime.Today;
+            exam.Id = Guid.NewGuid();
+            if (examManager.SaveExam(exam))
+            {
+                foreach (var q in questions)
+                {
+                    if(q.QuestionContent != null)
+                        questionManager.SaveQuestion(q, exam.Id);
+                }
+                return Json("True");
+            }
+            else
+	        {
+                return Json("False");
+            }
+        }
     }
 }
