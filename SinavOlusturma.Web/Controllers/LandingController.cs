@@ -43,6 +43,9 @@ namespace SinavOlusturma.Web.Controllers
 
         public ActionResult LogOut()
         {
+            if (Request.Cookies["UserId"] == null)
+                return RedirectToAction("Index", "Landing");
+
             Response.Cookies["UserId"].Value = null;
             Response.Cookies["UserId"].Expires = DateTime.Now.AddDays(-1);
 

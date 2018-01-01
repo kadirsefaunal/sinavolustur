@@ -22,11 +22,7 @@ namespace SinavOlusturma.Repository.UnitOfWork
                 throw new ArgumentNullException("dbContext can not be null.");
 
             _dbContext = dbContext;
-
-            // Buradan istediğiniz gibi EntityFramework'ü konfigure edebilirsiniz.
-            //_dbContext.Configuration.LazyLoadingEnabled = false;
-            //_dbContext.Configuration.ValidateOnSaveEnabled = false;
-            //_dbContext.Configuration.ProxyCreationEnabled = false;
+            
         }
 
         #region IUnitOfWork Members
@@ -39,20 +35,16 @@ namespace SinavOlusturma.Repository.UnitOfWork
         {
             try
             {
-                // Transaction işlemleri burada ele alınabilir veya Identity Map kurumsal tasarım kalıbı kullanılarak
-                // sadece değişen alanları güncellemeyide sağlayabiliriz.
                 return _dbContext.SaveChanges();
             }
             catch
             {
-                // Burada DbEntityValidationException hatalarını handle edebiliriz.
                 throw;
             }
         }
         #endregion
 
         #region IDisposable Members
-        // Burada IUnitOfWork arayüzüne implemente ettiğimiz IDisposable arayüzünün Dispose Patternini implemente ediyoruz.
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {

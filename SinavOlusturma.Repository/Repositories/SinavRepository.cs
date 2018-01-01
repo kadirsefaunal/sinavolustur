@@ -58,8 +58,6 @@ namespace SinavOlusturma.Repository.Repositories
 
         public void Delete(T entity)
         {
-            // Eğer sizlerde genelde bir kayıtı silmek yerine IsDelete şeklinde bool bir flag alanı tutuyorsanız,
-            // Küçük bir refleciton kodu yardımı ile bunuda otomatikleştirebiliriz.
             if (entity.GetType().GetProperty("IsDelete") != null)
             {
                 T _entity = entity;
@@ -70,7 +68,6 @@ namespace SinavOlusturma.Repository.Repositories
             }
             else
             {
-                // Önce entity'nin state'ini kontrol etmeliyiz.
                 DbEntityEntry dbEntityEntry = _dbContext.Entry(entity);
 
                 if (dbEntityEntry.State != EntityState.Deleted)

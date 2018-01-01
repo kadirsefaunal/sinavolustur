@@ -19,6 +19,9 @@ namespace SinavOlusturma.Web.Controllers
 
         public ActionResult Index()
         {
+            if (Request.Cookies["UserId"] == null)
+                return RedirectToAction("Index", "Landing");
+
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             string site = "https://www.wired.com";
@@ -107,6 +110,9 @@ namespace SinavOlusturma.Web.Controllers
 
         public ActionResult Exam(Guid examID)
         {
+            if (Request.Cookies["UserId"] == null)
+                return RedirectToAction("Index", "Landing");
+
             ExamQuestionView eqv = new ExamQuestionView();
             eqv.Exam = examManager.GetExam(examID);
             eqv.Questions = eqv.Exam.Questions.ToList();

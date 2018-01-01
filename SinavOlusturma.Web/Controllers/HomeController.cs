@@ -13,11 +13,17 @@ namespace SinavOlusturma.Web.Controllers
 
         public ActionResult Index()
         {
+            if (Request.Cookies["UserId"] == null)
+                return RedirectToAction("Index", "Landing");
+
             return View(examManager.GetAllExam());
         }
 
         public ActionResult DeleteExam(Guid examID)
         {
+            if (Request.Cookies["UserId"] == null)
+                return RedirectToAction("Index", "Landing");
+
             examManager.DeleteExamByID(examID);
             return RedirectToAction("Index");
         }
