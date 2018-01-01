@@ -4,10 +4,13 @@
             UserName: $("#username").val(),
             Password: $("#password").val()
         };
-        console.log(user);
 
         $.post("Landing/LogIn", { user: user }, function (result) {
-            console.log(result);
+            if (result == "True") {
+                window.location = "/home";
+            } else {
+                toastr["error"](result);
+            }
         });
     });
 
@@ -92,17 +95,9 @@
             Answer: $('input[name=question4]:checked').val(),
             Id: $("#question4").attr("qID")
         });
-
-        console.log(answers);
-
-        //var answer = {
-        //    Answer: $('input[name=question1]:checked').val(),
-        //    Id: $("#question1").attr("qID")
-        //};
-        //console.log(answer);
+       
 
         $.post("/Exam/Check", { answers: answers }, function (result) {
-            console.log(result);
             if (result[0] == false) {
                 $('input[name=question1]:checked').parent().addClass("danger-color");
             } else {
@@ -124,35 +119,7 @@
                 $('input[name=question4]:checked').parent().addClass("success-color");
             }
         });
-
-        //$.ajax({
-        //    type: "POST",
-        //    url: "/Exam/Check",
-        //    data: { answers: answers },
-        //    success: function (result) {
-        //        if (result[0] == false) {
-        //            $('input[name=question1]:checked').parent.addClass("danger-color");
-        //        } else {
-        //            $('input[name=question1]:checked').parent.addClass("success-color");
-        //        }
-        //        if (result[1] == false) {
-        //            $('input[name=question2]:checked').parent.addClass("danger-color");
-        //        } else {
-        //            $('input[name=question2]:checked').parent.addClass("success-color");
-        //        }
-        //        if (result[2] == false) {
-        //            $('input[name=question3]:checked').parent.addClass("danger-color");
-        //        } else {
-        //            $('input[name=question3]:checked').parent.addClass("success-color");
-        //        }
-        //        if (result[3] == false) {
-        //            $('input[name=question4]:checked').parent.addClass("danger-color");
-        //        } else {
-        //            $('input[name=question4]:checked').parent.addClass("success-color");
-        //        }
-        //        console.log(result);
-        //    }
-        //});
+        
     });
 
 });
