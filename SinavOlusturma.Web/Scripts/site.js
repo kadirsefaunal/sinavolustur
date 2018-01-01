@@ -69,7 +69,11 @@
         });
 
         $.post("Exam/SaveQuestions", { exam: exam, questions: questions }, function (result) {
-
+            if (result == "True") {
+                window.location = "/home";
+            } else {
+                toastr["error"]("Kayıt Başarısız!");
+            }
         });
     });
 
@@ -118,8 +122,6 @@
             } else {
                 $('input[name=question4]:checked').parent().addClass("success-color");
             }
-        });
-        
+        }); 
     });
-
 });
