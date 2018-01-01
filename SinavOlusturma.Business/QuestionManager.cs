@@ -1,4 +1,5 @@
 ﻿using SinavOlusturma.Data;
+using SinavOlusturma.Data.ModelView;
 using SinavOlusturma.Repository.Repositories;
 using SinavOlusturma.Repository.UnitOfWork;
 using System;
@@ -35,6 +36,16 @@ namespace SinavOlusturma.Business
             {
                 return false;
             }
+        }
+
+        public bool CheckQuestion(AnswerModel question)
+        {
+            var q = _QuestionRepo.Get(x => x.Id == question.Id);
+            if (q.Answer == question.Answer)
+                return true;
+            else
+                return false;
+
         }
     }
 }

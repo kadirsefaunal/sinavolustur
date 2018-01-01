@@ -113,5 +113,18 @@ namespace SinavOlusturma.Web.Controllers
 
             return View(eqv);
         }
+
+        [HttpPost]
+        public JsonResult Check(List<AnswerModel> answers)
+        {
+            List<bool> results = new List<bool>();
+
+            foreach (var answer in answers)
+            {
+                results.Add(questionManager.CheckQuestion(answer));
+            }
+
+            return Json(results);
+        }
     }
 }
