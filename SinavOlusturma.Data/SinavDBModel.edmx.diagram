@@ -4,11 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="da1bacffdf1447f99e5c2aec5bae4873" Name="Diagram1">
+      <Diagram DiagramId="2540983b65cd4e91a440e936dd4f6391" Name="Diagram1">
         <EntityTypeShape EntityType="SinavDBModel.Exam" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SinavDBModel.Question" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SinavDBModel.Result" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SinavDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SinavDBModel.User" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
         <AssociationConnector Association="SinavDBModel.FK_Question_Exam" ManuallyRouted="false" />
         <AssociationConnector Association="SinavDBModel.FK_Result_Exam" ManuallyRouted="false" />

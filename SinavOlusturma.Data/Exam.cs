@@ -17,8 +17,8 @@ namespace SinavOlusturma.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Exam()
         {
-            this.Questions = new HashSet<Question>();
-            this.Results = new HashSet<Result>();
+            this.Question = new HashSet<Question>();
+            this.Result = new HashSet<Result>();
         }
     
         public System.Guid Id { get; set; }
@@ -27,8 +27,8 @@ namespace SinavOlusturma.Data
         public Nullable<System.DateTime> Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Question> Questions { get; set; }
+        public virtual ICollection<Question> Question { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Result> Results { get; set; }
+        public virtual ICollection<Result> Result { get; set; }
     }
 }

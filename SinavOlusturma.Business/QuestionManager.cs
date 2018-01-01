@@ -38,6 +38,20 @@ namespace SinavOlusturma.Business
             }
         }
 
+        public bool DeleteQuestion(Question q)
+        {
+            try
+            {
+                _QuestionRepo.Delete(q);
+                _uow.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool CheckQuestion(AnswerModel question)
         {
             var q = _QuestionRepo.Get(x => x.Id == question.Id);

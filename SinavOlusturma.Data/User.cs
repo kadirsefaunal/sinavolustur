@@ -17,7 +17,7 @@ namespace SinavOlusturma.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Results = new HashSet<Result>();
+            this.Result = new HashSet<Result>();
         }
     
         public System.Guid Id { get; set; }
@@ -26,6 +26,6 @@ namespace SinavOlusturma.Data
         public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Result> Results { get; set; }
+        public virtual ICollection<Result> Result { get; set; }
     }
 }

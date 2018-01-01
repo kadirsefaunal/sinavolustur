@@ -25,10 +25,9 @@ namespace SinavOlusturma.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Exam> Exams { get; set; }
-        public virtual DbSet<Question> Questions { get; set; }
-        public virtual DbSet<Result> Results { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Exam> Exam { get; set; }
+        public virtual DbSet<Question> Question { get; set; }
+        public virtual DbSet<Result> Result { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }

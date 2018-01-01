@@ -115,7 +115,7 @@ namespace SinavOlusturma.Web.Controllers
 
             ExamQuestionView eqv = new ExamQuestionView();
             eqv.Exam = examManager.GetExam(examID);
-            eqv.Questions = eqv.Exam.Questions.ToList();
+            eqv.Questions = eqv.Exam.Question.ToList();
 
             return View(eqv);
         }
